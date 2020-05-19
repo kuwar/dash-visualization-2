@@ -5,5 +5,5 @@
 
 # Authors
 * Baivab Basnet <baivab.basnet@epita.fr>
-* Kavesh Pandit <>
+* Kavesh Pandit <kavesh.pandit@epita.fr>
 * Shaurave Kumar Kuwar <shaurave.kuwar@epita.fr>
