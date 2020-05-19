@@ -1,5 +1,7 @@
 # how to run
-python index.py
+1. cd into the root folder
+2. pip install -r requirements.txt
+3. python index.py
 
 # Authors
 * Baivab Basnet <baivab.basnet@epita.fr>
