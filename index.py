@@ -15,6 +15,8 @@ app.config.suppress_callback_exceptions = True
 # setting title
 app.title = "Stock Analysis | AAPL"
 
+server = app.server
+
 app.layout = html.Div([
     dcc.Location(id='url', refresh=False),
     html.Div(id='page-content')
