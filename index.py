@@ -37,9 +37,9 @@ def display_page(pathname):
 
 
 @app.callback(
-    Output('output', 'children'),
+    Output('time-series-output', 'children'),
     [
-        Input('pop_dropdown', 'value'),
+        Input('feature-dropdown', 'value'),
         Input('slider', 'value')
     ]
 )

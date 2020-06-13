@@ -1,14 +1,10 @@
-# import libraries
-import pandas as pd
-import pickle
-# Graphing
-import plotly.graph_objects as go
-# Dash
 import dash
+import plotly.graph_objects as go
 import dash_core_components as dcc
 import dash_html_components as html
 import dash_bootstrap_components as dbc
-from dash.dependencies import Output, Input
+import pandas as pd
+
 # Navbar
 from navbar import Navbar
 
@@ -49,7 +45,7 @@ body = dbc.Container(
                     [
                         html.Div(
                             dcc.Dropdown(
-                                id='pop_dropdown',
+                                id='feature-dropdown',
                                 options=options,
                                 value='AAPL.Open'
                             )
@@ -64,8 +60,7 @@ body = dbc.Container(
                 dbc.Col(
                     [
                         html.Div(
-                            id='output',
-                            children=[],
+                            id='time-series-output'
                         )
                     ],
                     md=12
