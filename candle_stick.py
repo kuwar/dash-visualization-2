@@ -57,14 +57,16 @@ body = dbc.Container(
 
 
 def plot_candle_stick(date_range=None):
+    df2 = df[(df['Date'] > dates[date_range[0]]) & (df['Date'] < dates[date_range[1]])]
+
     return {
         'data': [
             go.Candlestick(
-                x=df['Date'],
-                open=df['AAPL.Open'],
-                high=df['AAPL.High'],
-                low=df['AAPL.Low'],
-                close=df['AAPL.Close']
+                x=df2['Date'],
+                open=df2['AAPL.Open'],
+                high=df2['AAPL.High'],
+                low=df2['AAPL.Low'],
+                close=df2['AAPL.Close']
             )
         ],
         'layout': go.Layout(

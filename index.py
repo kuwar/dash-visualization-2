@@ -55,10 +55,7 @@ def update_graph(ohlc, date):
     ]
 )
 def update_graph(date_range):
-    print("#############")
-    print(date_range)
-    print("#############")
-    candle_graph = plot_candle_stick()
+    candle_graph = plot_candle_stick(date_range)
     return candle_graph
 
 
