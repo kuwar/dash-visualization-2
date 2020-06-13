@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 import dash
 import plotly.graph_objects as go
 import dash_core_components as dcc
