@@ -6,7 +6,7 @@ import dash_bootstrap_components as dbc
 
 from app import App, build_graph
 from homepage import Homepage
-from table import TabularData
+from candle_stick import candle_stick_chart
 
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.SLATE])
 
@@ -30,8 +30,8 @@ app.layout = html.Div([
 def display_page(pathname):
     if pathname == '/time-series':
         return App()
-    elif pathname == '/table':
-        return TabularData()
+    elif pathname == '/candle-stick':
+        return candle_stick_chart()
     else:
         return Homepage()
 

@@ -21,22 +21,8 @@ body = dbc.Container(
                 dbc.Col(
                     [
                         html.H2("Table of stock data"),
-                        dt.DataTable(
-                            id='table-sorting-filtering',
-                            style_data={
-                                'whiteSpace': 'normal',
-                                'height': 'auto'
-                            },
-                            style_table={
-                                'maxHeight': '800px',
-                                'overflowY': 'scroll'
-                            },
-                            columns=[{"name": i, "id": i, } for i in (st.columns)],
-                            data=st.to_dict('records'),
-                            sort_action="native",
-                            filter_action='native',
-                            page_current=0,
-                            page_size=20,
+                        dcc.Graph(
+                            id="candle-stick-graphic"
                         )
                     ],
                     md=12
@@ -48,8 +34,8 @@ body = dbc.Container(
 )
 
 
-def TabularData():
-    layout = html.Div([
+def candle_stick_chart():
+    layout = html.Div(children=[
         nav,
         body
     ])
@@ -57,6 +43,6 @@ def TabularData():
 
 
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.SLATE])
-app.layout = TabularData()
+app.layout = candle_stick_chart()
 if __name__ == "__main__":
     app.run_server()

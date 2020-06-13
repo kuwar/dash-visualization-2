@@ -6,7 +6,7 @@ def Navbar():
     navbar = dbc.NavbarSimple(
         children=[
             dbc.NavItem(dbc.NavLink("Time-Series", href="/time-series")),
-            dbc.NavItem(dbc.NavLink("Data", href="/table")),
+            dbc.NavItem(dbc.NavLink("Candle-Chart", href="/candle-stick")),
             dbc.NavItem(dbc.NavLink("Download CSV",
                                     target='_blank',
                                     href="https://raw.githubusercontent.com/plotly/datasets/master/finance-charts-apple.csv")),
