@@ -10,9 +10,9 @@ def Navbar():
         children=[
             dbc.NavItem(dbc.NavLink("Time Series", href="/time-series")),
             dbc.NavItem(dbc.NavLink("Candle Chart", href="/candle-stick")),
-            dbc.NavItem(dbc.NavLink("Download CSV",
+            dbc.NavItem(dbc.NavLink("Data Sets",
                                     target='_blank',
-                                    href="https://raw.githubusercontent.com/plotly/datasets/master/finance-charts-apple.csv")),
+                                    href="https://www.kaggle.com/borismarjanovic/price-volume-data-for-all-us-stocks-etfs")),
         ],
         brand="Home",
         brand_href="/home",

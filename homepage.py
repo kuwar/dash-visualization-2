@@ -16,7 +16,12 @@ body = dbc.Container(
             [
                 dbc.Col(
                     [
-                        html.H2("Apple stock data"),
+                        html.H2("Huge Stock Market Dataset"),
+                        html.Strong("Historical daily prices and volumes of all U.S. stocks and ETFs"),
+                        html.P("""\
+                            The data includes the full historical daily price and volume data for all US-based stocks and 
+                            ETFs trading on the NYSE, NASDAQ, and NYSE MKT
+                            """),
                         html.P(
                             """\
                             A stock market, equity market or share market is the aggregation of buyers and sellers 
@@ -27,14 +32,28 @@ body = dbc.Container(
                             and electronic trading platforms. Investment is usually made with an investment strategy in mind.
                             """
                         ),
+                        html.H2("Terminologies in data"),
                         html.P(
                             """\
-                            Apple Inc. is an American multinational technology company headquartered in Cupertino, 
-                            California, that designs, develops, and sells consumer electronics, computer software, and 
-                            online services. It is considered one of the Big Five technology companies, alongside 
-                            Microsoft, Amazon, Google, and Facebook.
+                            OHLC stands for the open, high, low and close prices of a share's price on a trading day.
                             """
                         ),
+                        html.P(
+                            """\
+                            Normally on a chart this is visually represented by a vertical line between the low price 
+                            and the high price with a left and right horizontal ledge showing the open price and close price.
+                            """
+                        ),
+                        html.P(
+                            """\
+                            The color on chart plays vital role. Normally, red color indicates opening price is greater than the
+                            closing price (Bearish). And green color indicates closing price is greater than the closing
+                            price (Bullish)
+                            """
+                        ),
+                        html.A(children=[
+                            "Click here to view stock chart"
+                        ], href="/candle-stick")
                     ],
                     md=12,
                 )
