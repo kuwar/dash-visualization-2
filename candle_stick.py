@@ -13,14 +13,15 @@ from navbar import Navbar
 nav = Navbar()
 
 # datasets path
-filepath = 'https://raw.githubusercontent.com/plotly/datasets/master/finance-charts-apple.csv'
+filepath = './data/Data/Stocks/asa.us.txt'
 # Read dataset using Pandas
 df = pd.read_csv(filepath)
 
 # Range slider options
 dates = [
-    '2015-02-17', '2015-05-17', '2015-08-17', '2015-11-17',
-    '2016-02-17', '2016-05-17', '2016-08-17', '2016-11-17', '2017-02-17'
+    '2005-02-25', '2006-05-17', '2007-08-17', '2008-11-17',
+    '2009-02-17', '2010-05-17', '2011-08-17', '2012-11-17', '2013-02-17',
+    '2014-02-17', '2015-02-17', '2016-02-17', '2017-11-10'
 ]
 
 body = dbc.Container(
@@ -29,7 +30,7 @@ body = dbc.Container(
             [
                 dbc.Col(
                     [
-                        html.H2("Apple stock plot"),
+                        html.H2("Daily prices and volumes of all U.S. stocks"),
                         dcc.Graph(
                             id="candle-stick-graphic",
                         )
@@ -66,10 +67,10 @@ def plot_candle_stick(date_range=None):
         'data': [
             go.Candlestick(
                 x=df2['Date'],
-                open=df2['AAPL.Open'],
-                high=df2['AAPL.High'],
-                low=df2['AAPL.Low'],
-                close=df2['AAPL.Close']
+                open=df2['Open'],
+                high=df2['High'],
+                low=df2['Low'],
+                close=df2['Close']
             )
         ],
         'layout': go.Layout(

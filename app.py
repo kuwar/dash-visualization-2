@@ -12,7 +12,7 @@ import pandas as pd
 from navbar import Navbar
 
 df = pd.read_csv(
-    'https://raw.githubusercontent.com/plotly/datasets/master/finance-charts-apple.csv')
+    './data/Data/Stocks/asa.us.txt')
 df.set_index(df.iloc[:, 0], drop=True, inplace=True)
 df = df.iloc[:, 1:]
 
@@ -20,14 +20,15 @@ nav = Navbar()
 
 # Options for dropdown
 options = [
-    {'label': x.replace('AAPL.', ''), 'value': x} for x in df.columns
+    {'label': x, 'value': x} for x in df.columns
 ]
 
 # Range slider options
 df['Date'] = pd.to_datetime(df.index)
 dates = [
-    '2015-02-17', '2015-05-17', '2015-08-17', '2015-11-17',
-    '2016-02-17', '2016-05-17', '2016-08-17', '2016-11-17', '2017-02-17'
+    '2005-02-25', '2006-05-17', '2007-08-17', '2008-11-17',
+    '2009-02-17', '2010-05-17', '2011-08-17', '2012-11-17', '2013-02-17',
+    '2014-02-17', '2015-02-17', '2016-02-17', '2017-11-10'
 ]
 
 body = dbc.Container(
@@ -50,7 +51,7 @@ body = dbc.Container(
                             dcc.Dropdown(
                                 id='feature-dropdown',
                                 options=options,
-                                value='AAPL.Open'
+                                value='Open'
                             )
                         )
                     ],
@@ -107,8 +108,8 @@ def build_graph(ohlc, selectedSliderDate):
 
     # default make High
     trace_default = go.Scatter(
-        x=df2.Date, y=df2['AAPL.High'],
-        name='AAPL HIGH',
+        x=df2.Date, y=df2['High'],
+        name='HIGH',
         line=dict(
             width=2,
             color='rgb(229, 151, 50)'
